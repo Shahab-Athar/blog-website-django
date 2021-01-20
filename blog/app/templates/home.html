@@ -7,6 +7,20 @@
     <title>Blog Website</title>
 </head>
 <body>
-    <h1>home</h1>
+    <h1>Post</h1>
+
+    {% for post in object_list %}
+
+    <ul>
+        <li>{{ post.title }} - {{ post.author }}
+            <br>
+            <a href="{% url 'artical-details' post.pk %}">View In Page View</a>
+            <br>
+            {{ post.body }}
+        </li>
+    </ul>
+
+    {% endfor %}
+
 </body>
 </html>
